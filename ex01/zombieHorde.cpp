@@ -6,7 +6,7 @@
 /*   By: gclausse <gclausse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 17:11:07 by gclausse          #+#    #+#             */
-/*   Updated: 2022/07/09 17:48:52 by gclausse         ###   ########.fr       */
+/*   Updated: 2022/07/09 18:30:55 by gclausse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 Zombie* Zombie::zombieHorde( int N, std::string name )
 {
 	Zombie* zombie = new Zombie[N];
+	int i = 0;
 
-	while (N >= 0)
+	while (i < N)
 	{
-		zombie->setZombieName(name);
-		N--;
+		zombie[i]._name = name;
+		i++;
 	}
 	return (zombie);
 }
