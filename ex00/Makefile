@@ -19,7 +19,7 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(DBFLAGS) $^ -o $@
 
 clean: 
-	$(RM) $(OBJS)
+	$(RM) $(OBJ)
 	
 fclean: clean
 	$(RM) $(NAME)
