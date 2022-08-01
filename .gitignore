@@ -1,3 +1,5 @@
 *.o
 .vscode/
-ex00/zombie
+*/zombie
+*/zombiebrain
+*/violence
