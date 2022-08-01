@@ -1,23 +1,28 @@
-_name = zombie
-OBJS = main.o Zombie.o zombieHorde.o
+NAME = zombie
+OBJS = main.cpp Zombie.cpp zombieHorde.cpp
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
 DBFLAGS = -std=c++98
 
-all: $(_name)
+OBJ=$(OBJS:.cpp=.o)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) $(DBFLAGS) -o $@ -c $<
+
+all: $(NAME)
 
 debug: CFLAGS+=$(DBFLAGS)
-debug:	$(_name)
+debug:	$(NAME)
 
-$(_name): $(OBJS)
-	$(CC) $^ -o $@
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(DBFLAGS) $^ -o $@
 
 clean: 
 	$(RM) $(OBJS)
 	
 fclean: clean
-	$(RM) $(_name)
+	$(RM) $(NAME)
 
 re: fclean all
 

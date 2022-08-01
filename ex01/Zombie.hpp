@@ -6,7 +6,7 @@
 /*   By: gclausse <gclausse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 17:10:58 by gclausse          #+#    #+#             */
-/*   Updated: 2022/07/09 17:41:10 by gclausse         ###   ########.fr       */
+/*   Updated: 2022/08/01 11:45:08 by gclausse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 #include <cctype>
 #include <string>
+#include <sstream>
 
 class Zombie {
 

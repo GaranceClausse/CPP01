@@ -6,7 +6,7 @@
 /*   By: gclausse <gclausse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 17:10:51 by gclausse          #+#    #+#             */
-/*   Updated: 2022/07/09 18:35:37 by gclausse         ###   ########.fr       */
+/*   Updated: 2022/08/01 11:45:47 by gclausse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 int	main()
 {
-	Zombie	*Horde;
+	Zombie	*Horde = NULL;
 	std::string	given_name;
-	std::string			nb_zomb = "2";
+	std::string	nb_zomb = "2";
+	int			int_zomb;
 	int	i = 0;
 
-	Horde = Horde->zombieHorde(stoi(nb_zomb), "Franck");
-	while (i < stoi(nb_zomb))
+	std::istringstream is(nb_zomb);
+	is >> int_zomb;
+	Horde = Horde->zombieHorde(int_zomb, "Franck");
+	while (i < int_zomb)
 	{
 		Horde[i].announce();
 		i++;
@@ -29,9 +32,11 @@ int	main()
 	std::getline (std::cin, given_name);
 	std::cout << "How many zombies in the hord? -> ";
 	std::cin >> nb_zomb;
-	Horde = Horde->zombieHorde(stoi(nb_zomb), given_name);
+	std::istringstream iss(nb_zomb);
+	iss >> int_zomb;
+	Horde = Horde->zombieHorde(int_zomb, given_name);
 	i = 0;
-	while (i < stoi(nb_zomb))
+	while (i < int_zomb)
 	{
 		Horde[i].announce();
 		i++;
