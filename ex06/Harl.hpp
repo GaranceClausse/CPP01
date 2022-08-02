@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gclausse <gclausse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 17:10:58 by gclausse          #+#    #+#             */
-/*   Updated: 2022/08/02 14:35:34 by gclausse         ###   ########.fr       */
+/*   Created: 2022/08/02 12:53:16 by gclausse          #+#    #+#             */
+/*   Updated: 2022/08/02 12:55:35 by gclausse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #pragma once
 
@@ -17,19 +18,15 @@
 #include <string>
 #include <sstream>
 
-class Zombie {
-
-	public :
-		Zombie(void) {};
-		~Zombie(void);
-		std::string	getZombieName();
-		void announce( void );
-		void	setZombieName(std::string name);
-
-	private :
-		std::string	_name;
-
+class Harl
+{
+private:
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
+public:
+	Harl(/* args */){};
+	~Harl(){};
+	void	complain(std::string level);
 };
-
-Zombie*	newZombie( std::string name );
-Zombie* zombieHorde( int N, std::string name );
