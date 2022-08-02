@@ -6,7 +6,7 @@
 /*   By: gclausse <gclausse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 14:41:08 by gclausse          #+#    #+#             */
-/*   Updated: 2022/08/01 15:17:20 by gclausse         ###   ########.fr       */
+/*   Updated: 2022/08/02 12:47:56 by gclausse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 class Harl
 {
 private:
-	void	debug(void) const;
-	void	info(void) const;
-	void	warning(void) const;
-	void	error(void) const;
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
 public:
 	Harl() {};
 	~Harl() {};
