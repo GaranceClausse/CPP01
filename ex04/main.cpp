@@ -6,7 +6,7 @@
 /*   By: gclausse <gclausse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 13:21:38 by gclausse          #+#    #+#             */
-/*   Updated: 2022/08/02 14:44:29 by gclausse         ###   ########.fr       */
+/*   Updated: 2022/08/02 15:20:29 by gclausse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,13 @@ int	main(int argc, char **argv)
 	}
 	if(ifs && ofs){
  
-        while(getline(ifs, line) && !line.empty()){
+        while(getline(ifs, line)){
 			my_replace(&line, argv[2], argv[3]);
-            	ofs << line << std::endl;
+            	ofs << line;
+				if (!ifs.eof())
+					ofs << std::endl;
         }
+		line.erase(0, 1);
     }	
 	ofs.close();
 	ifs.close();
